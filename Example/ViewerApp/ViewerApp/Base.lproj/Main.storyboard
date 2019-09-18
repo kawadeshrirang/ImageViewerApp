@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lNQ-7R-RaG">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="vmt-9e-zhX">
+            <objects>
+                <collectionViewController id="lNQ-7R-RaG" customClass="ViewController" customModule="ViewerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="h2v-ou-LGd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xzJ-2l-sa0" customClass="CollectionViewLayout" customModule="ViewerApp" customModuleProvider="target">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCellIdentifier" id="Shn-BW-g05" userLabel="PhotoCell" customClass="PhotoCollectionViewCell" customModule="ViewerApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-b9-wu3" userLabel="Container View">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="82Z-5p-Sdk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="82Z-5p-Sdk" secondAttribute="bottom" id="IP6-8r-Tc6"/>
+                                                <constraint firstAttribute="trailing" secondItem="82Z-5p-Sdk" secondAttribute="trailing" id="Nt6-Zy-Nx8"/>
+                                                <constraint firstItem="82Z-5p-Sdk" firstAttribute="leading" secondItem="bWL-b9-wu3" secondAttribute="leading" id="RBA-KC-0Ia"/>
+                                                <constraint firstItem="82Z-5p-Sdk" firstAttribute="top" secondItem="bWL-b9-wu3" secondAttribute="top" id="oGG-ET-dSG"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bWL-b9-wu3" secondAttribute="trailing" id="MtV-7l-qrJ"/>
+                                    <constraint firstItem="bWL-b9-wu3" firstAttribute="top" secondItem="Shn-BW-g05" secondAttribute="top" id="w9J-D5-QAS"/>
+                                    <constraint firstAttribute="bottom" secondItem="bWL-b9-wu3" secondAttribute="bottom" id="wJ0-9Y-6dP"/>
+                                    <constraint firstItem="bWL-b9-wu3" firstAttribute="leading" secondItem="Shn-BW-g05" secondAttribute="leading" id="zTv-wh-1r6"/>
+                                </constraints>
+                                <size key="customSize" width="180" height="180"/>
+                                <connections>
+                                    <outlet property="containerView" destination="bWL-b9-wu3" id="AdW-wO-oGZ"/>
+                                    <outlet property="imageView" destination="82Z-5p-Sdk" id="WXt-Rh-wFF"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="lNQ-7R-RaG" id="fK1-kJ-ZKA"/>
+                            <outlet property="delegate" destination="lNQ-7R-RaG" id="5u1-8v-SXl"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PuL-Cs-kaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="83"/>
+        </scene>
+    </scenes>
+</document>
